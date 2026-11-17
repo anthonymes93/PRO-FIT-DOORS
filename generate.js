@@ -1,0 +1,1 @@
+const fs=require('fs');const path=require('path');const{render}=require('./site');for(const page of ['home','services','our-work','about','contact']){const folder=page==='home'?'.':page;fs.mkdirSync(path.join(__dirname,folder),{recursive:true});fs.writeFileSync(path.join(__dirname,folder,'index.html'),render(page));}console.log('Generated five pages');
